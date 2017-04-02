@@ -2,11 +2,16 @@ package tutorial.core.repositories;
 
 
 import tutorial.core.entries.Account;
-import tutorial.core.entries.Blog;
+
+import java.util.List;
 
 public interface AccountRepo {
-    Account findAccount(Long id);
-    Account createAccount(Account data);
-    Blog createBlog(Long accountId, Blog data);
+    public List<Account> findAllAccounts();
+
+    public Account findAccount(Long id);
+
+    public Account findAccountByName(String name);
+
+    public Account createAccount(Account data);
 
 }

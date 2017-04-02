@@ -1,6 +1,5 @@
 package tutorial.core.entries;
 
-
 public class Blog {
     private Long id;
     private String title;

@@ -7,8 +7,7 @@ import tutorial.rest.resources.BlogListResource;
 
 public class BlogListResourceAsm extends ResourceAssemblerSupport<BlogList, BlogListResource> {
 
-    public BlogListResourceAsm()
-    {
+    public BlogListResourceAsm() {
         super(BlogController.class, tutorial.rest.resources.BlogListResource.class);
     }
 

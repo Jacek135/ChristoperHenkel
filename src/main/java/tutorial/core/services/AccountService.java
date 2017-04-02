@@ -2,10 +2,15 @@ package tutorial.core.services;
 
 import tutorial.core.entries.Account;
 import tutorial.core.entries.Blog;
+import tutorial.core.services.util.AccountList;
+import tutorial.core.services.util.BlogList;
 
 public interface AccountService {
 
-    Account findAccount(Long id);
-    Account createAccount(Account data);
-    Blog createBlog(Long accountId, Blog data);
+    public Account findAccount(Long id);
+    public Account createAccount(Account data);
+    public Blog createBlog(Long accountId, Blog data);
+    public BlogList findBlogsByAccount(Long accountId);
+    public AccountList findAllAccounts();
+    public Account findByAccountName(String name);
 }
