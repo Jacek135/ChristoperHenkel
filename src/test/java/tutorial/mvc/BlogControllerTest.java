@@ -1,4 +1,4 @@
-package mvc;
+package tutorial.mvc;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,9 +9,9 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import tutorial.core.entries.Account;
-import tutorial.core.entries.Blog;
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.Account;
+import tutorial.core.models.entities.Blog;
+import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.services.BlogService;
 import tutorial.core.services.exceptions.BlogNotFoundException;
 import tutorial.core.services.util.BlogEntryList;
@@ -60,8 +60,7 @@ public class BlogControllerTest {
         blogB.setTitle("Title B");
         list.add(blogB);
 
-        BlogList allBlogs = new BlogList();
-        allBlogs.setBlogs(list);
+        BlogList allBlogs = new BlogList(list);
 
         when(blogService.findAllBlogs()).thenReturn(allBlogs);
 
@@ -141,7 +140,7 @@ public class BlogControllerTest {
         blogListings.add(entryA);
         blogListings.add(entryB);
 
-        BlogEntryList list = new BlogEntryList();
+        BlogEntryList list = new BlogEntryList(1L, blogListings);
         list.setEntries(blogListings);
         list.setBlogId(1L);
 

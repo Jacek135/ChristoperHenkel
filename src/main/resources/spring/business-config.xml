@@ -30,7 +30,7 @@
                 <entry key="hibernate.show_sql" value="true"/>
             </map>
         </property>
-        <property name="packagesToScan" value="tutorial.core.entries"/>
+        <property name="packagesToScan" value="tutorial.core.models.entities"/>
     </bean>
 
     <tx:annotation-driven/>

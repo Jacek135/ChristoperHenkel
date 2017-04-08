@@ -1,6 +1,7 @@
 package tutorial.core.services.util;
 
-import tutorial.core.entries.Account;
+
+import tutorial.core.models.entities.Account;
 
 import java.util.ArrayList;
 import java.util.List;

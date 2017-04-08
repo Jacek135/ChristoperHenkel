@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import tutorial.core.entries.Blog;
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.Blog;
+import tutorial.core.services.util.BlogEntryList;
+import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.services.BlogService;
 import tutorial.core.services.exceptions.BlogNotFoundException;
-import tutorial.core.services.util.BlogEntryList;
 import tutorial.core.services.util.BlogList;
 import tutorial.rest.exceptions.NotFoundException;
 import tutorial.rest.resources.BlogEntryListResource;
@@ -45,18 +45,25 @@ public class BlogController {
         return new ResponseEntity<BlogListResource>(blogListRes, HttpStatus.OK);
     }
 
-    @RequestMapping(value="/{blogId}", method = RequestMethod.GET)
+    @RequestMapping(value="/{blogId}",
+            method = RequestMethod.GET)
     public ResponseEntity<BlogResource> getBlog(@PathVariable Long blogId)
     {
         Blog blog = blogService.findBlog(blogId);
-        BlogResource res = new BlogResourceAsm().toResource(blog);
-        return new ResponseEntity<BlogResource>(res, HttpStatus.OK);
+        if(blog != null) {
+            BlogResource res = new BlogResourceAsm().toResource(blog);
+            return new ResponseEntity<BlogResource>(res, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<BlogResource>(HttpStatus.NOT_FOUND);
+        }
     }
 
-    @RequestMapping(value="/{blogId}/blog-entries", method = RequestMethod.POST)
+    @RequestMapping(value="/{blogId}/blog-entries",
+            method = RequestMethod.POST)
     public ResponseEntity<BlogEntryResource> createBlogEntry(
             @PathVariable Long blogId,
-            @RequestBody BlogEntryResource sentBlogEntry) {
+            @RequestBody BlogEntryResource sentBlogEntry
+    ) {
         BlogEntry createdBlogEntry = null;
         try {
             createdBlogEntry = blogService.createBlogEntry(blogId, sentBlogEntry.toBlogEntry());

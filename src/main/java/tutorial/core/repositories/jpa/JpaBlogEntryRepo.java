@@ -1,7 +1,7 @@
 package tutorial.core.repositories.jpa;
 
 import org.springframework.stereotype.Repository;
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.repositories.BlogEntryRepo;
 
 import javax.persistence.EntityManager;
@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public class JpaBlogEntryRepo implements BlogEntryRepo {
-
     @PersistenceContext
     private EntityManager em;
 

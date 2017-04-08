@@ -1,4 +1,4 @@
-package tutorial.core.entries;
+package tutorial.core.models.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,12 +6,9 @@ import javax.persistence.Id;
 
 @Entity
 public class Account {
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private Long id;
-
     private String name;
-
     private String password;
 
     public Long getId() {

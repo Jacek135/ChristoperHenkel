@@ -1,7 +1,7 @@
 package tutorial.rest.resources;
 
         import org.springframework.hateoas.ResourceSupport;
-        import tutorial.core.entries.BlogEntry;
+        import tutorial.core.models.entities.BlogEntry;
 
 public class BlogEntryResource extends ResourceSupport {
     private String title;

@@ -1,7 +1,7 @@
 package tutorial.core.repositories.jpa;
 
 import org.springframework.stereotype.Repository;
-import tutorial.core.entries.Blog;
+import tutorial.core.models.entities.Blog;
 import tutorial.core.repositories.BlogRepo;
 
 import javax.persistence.EntityManager;
@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public class JpaBlogRepo implements BlogRepo {
-
     @PersistenceContext
     private EntityManager em;
 
@@ -37,7 +36,7 @@ public class JpaBlogRepo implements BlogRepo {
         Query query = em.createQuery("SELECT b from Blog b where b.title=?1");
         query.setParameter(1, title);
         List<Blog> blogs = query.getResultList();
-        if (blogs.isEmpty()) {
+        if(blogs.isEmpty()) {
             return null;
         } else {
             return blogs.get(0);
