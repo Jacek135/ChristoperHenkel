@@ -1,7 +1,7 @@
 package tutorial.core.services;
 
-import tutorial.core.entries.Account;
-import tutorial.core.entries.Blog;
+import tutorial.core.models.entities.Account;
+import tutorial.core.models.entities.Blog;
 import tutorial.core.services.util.AccountList;
 import tutorial.core.services.util.BlogList;
 

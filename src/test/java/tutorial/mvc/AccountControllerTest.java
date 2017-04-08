@@ -1,4 +1,4 @@
-package mvc;
+package tutorial.mvc;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -9,8 +9,8 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import tutorial.core.entries.Account;
-import tutorial.core.entries.Blog;
+import tutorial.core.models.entities.Account;
+import tutorial.core.models.entities.Blog;
 import tutorial.core.services.AccountService;
 import tutorial.core.services.exceptions.AccountDoesNotExistException;
 import tutorial.core.services.exceptions.AccountExistsException;

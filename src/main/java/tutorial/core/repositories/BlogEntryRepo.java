@@ -1,7 +1,7 @@
 package tutorial.core.repositories;
 
 
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.BlogEntry;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package tutorial.core.entries;
+package tutorial.core.models.entities;
 
 public class Blog {
     private Long id;

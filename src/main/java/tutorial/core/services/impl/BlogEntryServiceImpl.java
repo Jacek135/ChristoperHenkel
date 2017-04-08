@@ -2,7 +2,7 @@ package tutorial.core.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.BlogEntry;
 import tutorial.core.repositories.BlogEntryRepo;
 import tutorial.core.services.BlogEntryService;
 

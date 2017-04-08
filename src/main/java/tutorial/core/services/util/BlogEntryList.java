@@ -1,7 +1,7 @@
 package tutorial.core.services.util;
 
 
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.BlogEntry;
 
 import java.util.ArrayList;
 import java.util.List;

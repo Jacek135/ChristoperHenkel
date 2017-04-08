@@ -1,6 +1,6 @@
 package tutorial.core.services;
 
-import tutorial.core.entries.BlogEntry;
+import tutorial.core.models.entities.BlogEntry;
 
 public interface BlogEntryService {
 

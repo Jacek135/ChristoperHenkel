@@ -1,7 +1,8 @@
 package tutorial.core.repositories;
 
 
-import tutorial.core.entries.Account;
+
+import tutorial.core.models.entities.Account;
 
 import java.util.List;
 

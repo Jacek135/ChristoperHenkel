@@ -3,7 +3,7 @@ package tutorial.rest.resources;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.hateoas.ResourceSupport;
-import tutorial.core.entries.Account;
+import tutorial.core.models.entities.Account;
 
 public class AccountResource extends ResourceSupport {
     private String name;
