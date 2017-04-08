@@ -12,7 +12,6 @@
 
     <context:component-scan base-package="tutorial.core.repositories.jpa"/>
 
-
     <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
         <property name="username" value="sa"/>
         <property name="password" value="sa"/>
@@ -28,13 +27,14 @@
         <property name="jpaProperties">
             <map>
                 <entry key="hibernate.hbm2ddl.auto" value="create-drop"/>
-                <entry key="hibernate.show.sql" value="true"/>
+                <entry key="hibernate.show_sql" value="true"/>
             </map>
         </property>
         <property name="packagesToScan" value="tutorial.core.entries"/>
     </bean>
 
     <tx:annotation-driven/>
+
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
 
     <context:component-scan base-package="tutorial.core.services.impl"/>
