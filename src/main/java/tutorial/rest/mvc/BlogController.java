@@ -58,12 +58,10 @@ public class BlogController {
         }
     }
 
-    @RequestMapping(value="/{blogId}/blog-entries",
-            method = RequestMethod.POST)
+    @RequestMapping(value="/{blogId}/blog-entries", method = RequestMethod.POST)
     public ResponseEntity<BlogEntryResource> createBlogEntry(
             @PathVariable Long blogId,
-            @RequestBody BlogEntryResource sentBlogEntry
-    ) {
+            @RequestBody BlogEntryResource sentBlogEntry) {
         BlogEntry createdBlogEntry = null;
         try {
             createdBlogEntry = blogService.createBlogEntry(blogId, sentBlogEntry.toBlogEntry());
